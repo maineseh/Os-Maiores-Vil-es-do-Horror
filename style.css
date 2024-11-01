@@ -1,0 +1,177 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Faster One', cursive; /* Fonte para o corpo do texto */
+    background-color: #000000; /* Fundo preto profundo */
+    color: #EAEAEA; /* Texto em cinza claro */
+    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+}
+
+header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro h1, .assassino h2 {
+    font-family: 'Horror', cursive; /* Fonte para os títulos */
+    color: #9B0000; /* Títulos em vermelho escuro */
+    transition: color 0.3s; /* Transição suave para a cor */
+}
+
+p {
+    font-size: 1.1em; /* Tamanho do texto */
+    line-height: 1.5; /* Melhora a legibilidade */
+}
+
+.colagem {
+    width: 100%;
+    height: auto;
+    opacity: 0.95;
+    border-bottom: 5px solid #9B0000; /* Borda na parte inferior */
+}
+
+.intro {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: #1C1C1C; /* Fundo cinza muito escuro */
+    border: 2px solid #9B0000; /* Borda em vermelho escuro */
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Sombra profunda */
+    animation: fadeIn 0.5s ease-in-out; /* Animação de entrada */
+}
+
+.assassinos-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.assassino {
+    width: 90%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo com opacidade para profundidade */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #9B0000; /* Borda em vermelho escuro */
+    opacity: 0; /* Começa invisível */
+    animation: fadeInUp 0.5s forwards; /* Animação de entrada */
+}
+
+.assassino img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: transform 0.3s; /* Efeito de zoom na imagem */
+}
+
+.assassino h2 {
+    font-size: 1.5em; /* Aumenta o tamanho do título */
+    color: #9B0000; /* Títulos em vermelho escuro */
+}
+
+.assassino p {
+    font-size: 1em; /* Tamanho do texto do parágrafo */
+}
+
+.assassino:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 25px rgba(155, 0, 0, 0.9); /* Sombra mais pronunciada ao passar o mouse */
+}
+
+.assassino img:hover {
+    transform: scale(1.1); /* Efeito de zoom na imagem ao passar o mouse */
+}
+
+.botoes-extra {
+    text-align: center;
+    margin: 20px;
+}
+
+.botoes-extra button {
+    padding: 10px 20px;
+    background-color: #7E1E25; /* Cor de fundo do botão */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Adiciona transição ao transform */
+}
+
+.botoes-extra button:hover {
+    background-color: #C91E1E; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Efeito de crescimento ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.5); /* Sombra ao passar o mouse */
+}
+
+.botoes-extra button:focus {
+    outline: none; /* Remove contorno padrão */
+    box-shadow: 0 0 5px #C91E1E; /* Sombra ao focar no botão */
+}
+
+.apoio-contato {
+    padding: 30px;
+    text-align: center;
+}
+
+.botoes-apoio a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #7E1E25; /* Fundo dos botões de apoio */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave */
+}
+
+.botoes-apoio a:hover {
+    background-color: #C91E1E; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Efeito de crescimento ao passar o mouse */
+}
+
+.botoes-apoio a:focus {
+    outline: none; /* Remove contorno padrão */
+    box-shadow: 0 0 5px #C91E1E; /* Sombra ao focar no link */
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .assassinos-lista {
+        flex-direction: row; /* Mudando para disposição em linha em telas maiores */
+        flex-wrap: wrap; /* Permite que os cards se envolvam em várias linhas */
+        justify-content: center; /* Centraliza os cards */
+    }
+}
